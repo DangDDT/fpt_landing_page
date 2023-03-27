@@ -2,19 +2,17 @@ import React, { FC } from 'react'
 import Box from '@mui/material/Box'
 import { Link as ScrollLink } from 'react-scroll'
 import { navigations } from './navigation.data'
-
+import NextLink  from 'next/link' 
+import { Button } from '@mui/material'
+import { useRouter } from 'next/router'
 const Navigation: FC = () => {
+  const router = useRouter()
   return (
     <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' } }}>
       {navigations.map(({ path: destination, label }) => (
-        <Box
-          component={ScrollLink}
+        <NextLink href={destination} passHref >
+        <Button
           key={destination}
-          activeClass="current"
-          to={destination}
-          spy={true}
-          smooth={true}
-          duration={350}
           sx={{
             position: 'relative',
             color: 'text.primary',
@@ -26,7 +24,7 @@ const Navigation: FC = () => {
             px: { xs: 0, md: 3 },
             mb: { xs: 3, md: 0 },
             fontSize: { xs: '1.2rem', md: 'inherit' },
-            ...(destination === '/' && {
+            ...(destination === router.pathname && {
               color: 'primary.main',
             }),
 
@@ -54,7 +52,8 @@ const Navigation: FC = () => {
             {/* <img src="/images/headline-curve.svg" alt="Headline curve" /> */}
           </Box>
           {label}
-        </Box>
+        </Button>
+        </NextLink>
       ))}
     </Box>
   )
