@@ -1,23 +1,37 @@
 import React, { FC } from "react";
 import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
-import { FooterNavigation, FooterSocialLinks } from "@/components/footer";
+import Image from "next/image";
 
 const Footer: FC = () => {
   return (
     <Box
       component="footer"
       sx={{
-        backgroundColor: "primary.main",
-        py: { xs: 6, md: 10 },
+        backgroundColor: "primary.dark",
         color: "primary.contrastText",
+        padding: "10px 5%",
       }}
     >
-      <Container>
-        <Box></Box>
-      </Container>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}
+      >
+        <Image
+          src="/images/Logo_Đại_học_FPT.png"
+          width={100}
+          height={50}
+          quality={100}
+          alt="Testimonial img"
+        />
+
+        <p style={{ fontSize: "12px" }}>
+          Copyright @ 2023 International Collaboration
+        </p>
+      </Box>
     </Box>
   );
 };

@@ -21,7 +21,7 @@ const Navigation: FC = () => {
             key={destination}
             sx={{
               position: "relative",
-              color: "text.primary",
+              color: "primary.contrastText",
               cursor: "pointer",
               fontWeight: 300,
               display: "inline-flex",

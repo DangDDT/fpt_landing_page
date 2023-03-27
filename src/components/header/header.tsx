@@ -38,7 +38,7 @@ const Header: FC = () => {
             width: "fit-content",
             display: "flex",
             //tạm
-            backgroundColor: "#F27024",
+            backgroundColor: "primary.light",
             padding: "5px 10px",
             borderRadius: "25px",
             alignItems: "center",

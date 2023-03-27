@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import Box from "@mui/material/Box";
 import BoxWithImageBackground from "../custom_box/box_with_image_background";
-import HeroImg from "../../../public/images/home-feature.png";
-
+// import HeroImg from "/images/home-feature.png";
+import JoinNow from "./join-now";
 function HomeHero() {
   return (
     <Box
@@ -11,7 +11,7 @@ function HomeHero() {
         backgroundColor: "Background.paper",
         position: "relative",
         height: "100vh",
-        backgroundImage: `url(${HeroImg})`,
+        // backgroundImage: `url(${HeroImg})`,
       }}
     >
       <BoxWithImageBackground
