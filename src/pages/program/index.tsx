@@ -4,14 +4,13 @@ import { NextPageWithLayout } from "@/interfaces/layout";
 import { MainLayout } from "@/components/layout";
 // import { HomeFeature, HomeHero, HomePopularCourse, HomeTestimonial, HomeOurMentors, DynamicHomeNewsLetter } from '@/components/home'
 
-const DynamicHomeHero = dynamic(() => import("../../components/home/hero"));
+const DynamicProgramList = dynamic(() => import("../../components/program/program-list"));
 
 
 const Program:NextPageWithLayout = () =>{
   return (
   <>
-     <DynamicHomeHero />
-      {/* <DynamicHomePopularCourse /> */}
+     <DynamicProgramList />
   </>
   )
 }
