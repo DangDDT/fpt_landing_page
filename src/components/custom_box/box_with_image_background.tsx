@@ -17,7 +17,7 @@ function BoxWithImageBackground({ textTop, textBottom, imageUrl }: Props) {
         position: "absolute",
         bottom: "0",
         //tạm
-        backgroundImage: "linear-gradient(#ff000000, #FE6603ad)",
+        backgroundImage: "linear-gradient(#ff000000, #F27024)",
       }}
     >
       <Container sx={{ display: "flex", flexDirection: "column", mt: "50px" }}>

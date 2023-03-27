@@ -8,9 +8,9 @@ function HomeHero() {
     <Box
       id="hero"
       sx={{
-        backgroundColor: "#000",
+        backgroundColor: "Background.paper",
         position: "relative",
-        height: "90vh",
+        height: "100vh",
         backgroundImage: `url(${HeroImg})`,
       }}
     >

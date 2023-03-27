@@ -19,55 +19,61 @@ const Header: FC = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        margin: "30px",
       }}
     >
-      <Box sx={{ ml: "auto", display: { xs: "inline-flex", md: "none" } }}>
+      <Box
+        sx={{
+          position: "fixed",
+          top: "20px",
+          zIndex: "9999",
+        }}
+      >
+        {/* <Box sx={{ ml: "auto", display: { xs: "inline-flex", md: "none" } }}>
         <IconButton onClick={() => setVisibleMenu(!visibleMenu)}>
           <Menu />
         </IconButton>
-      </Box>
-      <Box
-        sx={{
-          width: "fit-content",
-          display: "flex",
-          padding: "5px 10px",
-          //tạm
-          backgroundColor: "#FE6603",
-          borderRadius: "20px",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "20px",
-          flexDirection: { xs: "column", md: "row" },
+      </Box> */}
+        <Box
+          sx={{
+            width: "fit-content",
+            display: "flex",
+            //tạm
+            backgroundColor: "#F27024",
+            padding: "5px 10px",
+            borderRadius: "25px",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "40px",
+            flexDirection: { xs: "column", md: "row" },
 
-          transition: (theme) => theme.transitions.create(["top"]),
-          ...(matchMobileView && {
-            py: 6,
-            backgroundColor: "background.paper",
-            zIndex: "appBar",
-            position: "fixed",
-            height: { xs: "100vh", md: "auto" },
-            top: visibleMenu ? 0 : "-120vh",
-            left: 0,
-          }),
-        }}
-      >
-        <Box /> {/* Magic space */}
-        <Logo />
-        <Navigation />
-        {/* <AuthNavigation /> */}
-        {visibleMenu && matchMobileView && (
-          <IconButton
-            sx={{
+            transition: (theme) => theme.transitions.create(["top"]),
+            ...(matchMobileView && {
+              py: 6,
+              backgroundColor: "transparent",
+              zIndex: "appBar",
               position: "fixed",
-              top: 10,
-              right: 10,
-            }}
-            onClick={() => setVisibleMenu(!visibleMenu)}
-          >
-            <Close />
-          </IconButton>
-        )}
+              height: { xs: "100vh", md: "auto" },
+              top: visibleMenu ? 0 : "-120vh",
+              left: 0,
+            }),
+          }}
+        >
+          <Logo />
+          <Navigation />
+          {/* <AuthNavigation /> */}
+          {visibleMenu && matchMobileView && (
+            <IconButton
+              sx={{
+                position: "fixed",
+                top: 10,
+                right: 10,
+              }}
+              onClick={() => setVisibleMenu(!visibleMenu)}
+            >
+              <Close />
+            </IconButton>
+          )}
+        </Box>
       </Box>
     </Box>
   );
