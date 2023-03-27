@@ -17,7 +17,7 @@ const Navigation: FC = () => {
           duration={350}
           sx={{
             position: 'relative',
-            color: 'text.disabled',
+            color: 'text.primary',
             cursor: 'pointer',
             fontWeight: 600,
             display: 'inline-flex',
@@ -51,7 +51,7 @@ const Navigation: FC = () => {
             }}
           >
             {/* eslint-disable-next-line */}
-            <img src="/images/headline-curve.svg" alt="Headline curve" />
+            {/* <img src="/images/headline-curve.svg" alt="Headline curve" /> */}
           </Box>
           {label}
         </Box>
