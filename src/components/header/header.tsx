@@ -28,16 +28,19 @@ const Header: FC = () => {
           zIndex: "9999",
         }}
       >
-        {/* <Box sx={{ ml: "auto", display: { xs: "inline-flex", md: "none" } }}>
-        <IconButton onClick={() => setVisibleMenu(!visibleMenu)}>
-          <Menu />
-        </IconButton>
-      </Box> */}
+        <Box sx={{ ml: "auto", display: { xs: "inline-flex", md: "none" } }}>
+          <IconButton onClick={() => setVisibleMenu(!visibleMenu)}>
+            <Menu />
+          </IconButton>
+        </Box>
         <Box
           sx={{
             width: "fit-content",
             display: "flex",
+<<<<<<< Updated upstream
             //tạm
+=======
+>>>>>>> Stashed changes
             backgroundColor: "primary.light",
             padding: "5px 10px",
             borderRadius: "25px",

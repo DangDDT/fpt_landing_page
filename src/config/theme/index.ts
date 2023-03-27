@@ -1,5 +1,4 @@
 import { createTheme as createMuiTheme, Theme } from '@mui/material/styles'
-
 import typography from './typography'
 import paletteBase from './palette-base'
 import paletteLight from './palette-light'

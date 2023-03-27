@@ -26,8 +26,10 @@ const MentorCardItem: FC<Props> = ({ item }) => {
           p: 2,
           backgroundColor: 'background.paper',
           transition: (theme) => theme.transitions.create(['box-shadow']),
+          boxShadow: 5,
           '&:hover': {
-            boxShadow: 2,
+            boxShadow: 10,
+            cursor: 'pointer',
           },
         }}
       >

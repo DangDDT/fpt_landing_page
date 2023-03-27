@@ -10,6 +10,8 @@ import 'slick-carousel/slick/slick.css'
 import '@/styles/globals.css'
 import '@/styles/react-slick.css'
 import { NextPageWithLayout } from '@/interfaces/layout'
+
+// Font files can be colocated inside of `pages`
 // import 'slick-carousel/slick/slick-theme.css'
 
 // Client-side cache, shared for the whole session of the user in the browser.
@@ -25,8 +27,8 @@ const App: FC<AppPropsWithLayout> = (props: AppPropsWithLayout) => {
 
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout || ((page) => page)
-  
-  
+
+
   return (
     <CacheProvider value={emotionCache}>
       <Head>

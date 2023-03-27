@@ -31,7 +31,7 @@ const Navigation: FC = () => {
               mb: { xs: 3, md: 0 },
               fontSize: { xs: "1.2rem", md: "inherit" },
               ...(destination === router.pathname && {
-                color: "primary.main",
+                fontWeight: 'bold',
               }),
 
               "& > div": { display: "none" },
