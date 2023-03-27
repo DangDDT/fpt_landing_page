@@ -1,6 +1,6 @@
 import type { User } from './user'
 
-export interface Program  {
+export interface Program {
   id: number | string,
   imageUrl: string
   programName: string

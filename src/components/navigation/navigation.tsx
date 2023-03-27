@@ -19,6 +19,7 @@ const Navigation: FC = () => {
         <NextLink href={destination} passHref>
           <Button
             key={destination}
+            disableRipple
             sx={{
               position: "relative",
               color: "primary.contrastText",
@@ -31,7 +32,7 @@ const Navigation: FC = () => {
               mb: { xs: 3, md: 0 },
               fontSize: { xs: "1.2rem", md: "inherit" },
               ...(destination === router.pathname && {
-                fontWeight: 'bold',
+                fontWeight: "bold",
               }),
 
               "& > div": { display: "none" },

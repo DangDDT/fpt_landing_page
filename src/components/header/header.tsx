@@ -23,36 +23,40 @@ const Header: FC = () => {
     >
       <Box
         sx={{
+          padding: "10px",
+          ml: "auto",
+          display: { xs: "inline-flex", md: "none" },
+        }}
+      >
+        {!visibleMenu && (
+          <IconButton onClick={() => setVisibleMenu(!visibleMenu)}>
+            <Menu />
+          </IconButton>
+        )}
+      </Box>
+      <Box
+        sx={{
           position: "fixed",
           top: "20px",
           zIndex: "9999",
         }}
       >
-        <Box sx={{ ml: "auto", display: { xs: "inline-flex", md: "none" } }}>
-          <IconButton onClick={() => setVisibleMenu(!visibleMenu)}>
-            <Menu />
-          </IconButton>
-        </Box>
         <Box
           sx={{
             width: "fit-content",
             display: "flex",
-<<<<<<< Updated upstream
-            //tạm
-=======
->>>>>>> Stashed changes
             backgroundColor: "primary.light",
-            padding: "5px 10px",
+            padding: "10px 40px",
             borderRadius: "25px",
             alignItems: "center",
             justifyContent: "center",
             gap: "40px",
             flexDirection: { xs: "column", md: "row" },
-
             transition: (theme) => theme.transitions.create(["top"]),
             ...(matchMobileView && {
               py: 6,
-              backgroundColor: "transparent",
+              borderRadius: "0px",
+              backgroundColor: "primary.dark",
               zIndex: "appBar",
               position: "fixed",
               height: { xs: "100vh", md: "auto" },
