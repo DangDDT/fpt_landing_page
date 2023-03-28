@@ -5,7 +5,8 @@ import { navigations } from "./navigation.data";
 import NextLink from "next/link";
 import { Button } from "@mui/material";
 import { useRouter } from "next/router";
-const Navigation: FC = () => {
+import { ColorMenuContext } from "@/providers/context";
+function Navigation({ onClick }: { onClick: VoidFunction }) {
   const router = useRouter();
   return (
     <Box
@@ -16,15 +17,16 @@ const Navigation: FC = () => {
       }}
     >
       {navigations.map(({ path: destination, label }) => (
-        <NextLink href={destination} passHref>
+        <NextLink key={destination} href={destination} passHref>
           <Button
+            onClick={onClick}
             key={destination}
             disableRipple
             sx={{
               position: "relative",
               color: "primary.contrastText",
               cursor: "pointer",
-              fontWeight: 300,
+              fontWeight: 500,
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
@@ -38,7 +40,6 @@ const Navigation: FC = () => {
               "& > div": { display: "none" },
 
               "&.current>div": { display: "block" },
-
               // "&:hover": {
               //   color: "primary.main",
               //   "&>div": {
@@ -53,6 +54,6 @@ const Navigation: FC = () => {
       ))}
     </Box>
   );
-};
+}
 
 export default Navigation;
