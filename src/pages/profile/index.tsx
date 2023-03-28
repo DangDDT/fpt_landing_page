@@ -3,16 +3,17 @@ import dynamic from "next/dynamic";
 import { NextPageWithLayout } from "@/interfaces/layout";
 import { MainLayout } from "@/components/layout";
 
-const DynamicHomeHero = dynamic(() => import("../../components/home/hero"));
+const DynamicProfile = dynamic(
+  () => import("../../components/profile/profile")
+);
 
-
-const Profile:NextPageWithLayout = () =>{
+const Profile: NextPageWithLayout = () => {
   return (
-  <>
-     <DynamicHomeHero />
-  </>
-  )
-}
-Profile.getLayout = (page) => <MainLayout>{page}</MainLayout>
+    <>
+      <DynamicProfile />
+    </>
+  );
+};
+Profile.getLayout = (page) => <MainLayout>{page}</MainLayout>;
 
 export default Profile;

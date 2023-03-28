@@ -2,12 +2,12 @@ import React, { FC, useRef } from "react";
 import Image from "next/image";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-
 import { Program } from "@/interfaces/program";
-import Link from "next/link";
 import { Container, Fade, Grid, Slide } from "@mui/material";
+import ImageView from "@/components/photo_view/photo-view";
+import BaseBreadCrumbs from "@/components/breadscrumbs/breadcrumbs";
 
-const myLoader = ({ src }: { src: string }) => {
+export const myLoader = ({ src }: { src: string }) => {
   return src;
 };
 
@@ -31,9 +31,15 @@ const ProgramDetail: FC<Props> = ({ item }) => {
         },
         backgroundColor: "background.default",
       }}
-      height={"100vh"}
     >
       <Container maxWidth="xl">
+        <BaseBreadCrumbs
+          previousLink={[
+            { href: "/", name: "Homepage" },
+            { href: "/program", name: "Programs" },
+          ]}
+          currentLink={item.programName}
+        />
         <Grid container columnGap={10}>
           <Fade
             in={true}
@@ -164,6 +170,22 @@ const ProgramDetail: FC<Props> = ({ item }) => {
             </Box>
           </Grid>
         </Grid>
+        <Box height={24}></Box>
+        <Typography variant="h1">Photos of event</Typography>
+        <Box height={24}></Box>
+        <Fade
+          in={true}
+          style={{ transformOrigin: "4 0 0" }}
+          {...(true ? { timeout: 1500 } : {})}
+        >
+          <Box>
+            <ImageView
+              listImage={Array.from({ length: 3 }, (v, i) => i).map(
+                (e) => item.imageUrl
+              )}
+            ></ImageView>
+          </Box>
+        </Fade>
       </Container>
     </Box>
   );
