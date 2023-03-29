@@ -8,10 +8,11 @@ import { useTheme, styled } from "@mui/material/styles";
 import { IconButton, useMediaQuery } from "@mui/material";
 import NavigateNextIcon from "@mui/icons-material/ArrowForwardIosRounded";
 import NavigateBeforeIcon from "@mui/icons-material/ArrowBackIosNewRounded";
+
 const NavbarTopAnchor = styled("div")(() => ({
   display: "block",
-  position: "absolute",
-  top: "0px",
+  position: "relative",
+  top: "-30px",
   visibility: "hidden",
 }));
 const NavbarBottomAnchor = styled("div")(() => ({
@@ -58,18 +59,7 @@ const SliderArrow: FC<SliderArrowArrow> = (props) => {
   );
 };
 const joinNow = () => {
-  const { breakpoints } = useTheme();
-  // const matchMobileView = useMediaQuery(breakpoints.down("sm"));
   const { colorMenu, setColorMenu } = useContext(ColorMenuContext);
-
-  const sliderConfig: Settings = {
-    infinite: true,
-    autoplay: false,
-    speed: 500,
-    slidesToScroll: 1,
-    prevArrow: <SliderArrow type="prev" />,
-    nextArrow: <SliderArrow type="next" />,
-  };
   const trackScrolling = useCallback(() => {
     const wrappedTopElementId = `__isTopDynamicJoinNow`;
     const wrappedTopElement = document.getElementById(wrappedTopElementId);

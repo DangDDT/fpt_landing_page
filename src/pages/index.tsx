@@ -14,6 +14,7 @@ const Home: NextPageWithLayout = () => {
   return (
     <>
       <DynamicHomeHero />
+
       <DynamicJoinNow />
       <DynamicReferences />
 
