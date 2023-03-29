@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import { Link as ScrollLink } from "react-scroll";
 import { navigations } from "./navigation.data";
 import NextLink from "next/link";
-import { Button } from "@mui/material";
+import { Button, Fade } from "@mui/material";
 import { useRouter } from "next/router";
 import { ColorMenuContext } from "@/providers/context";
 
@@ -40,15 +40,39 @@ function Navigation({ onClick }: { onClick: VoidFunction }) {
 
               "& > div": { display: "none" },
 
-              "&.current>div": { display: "block" },
-              // "&:hover": {
-              //   color: "primary.main",
-              //   "&>div": {
-              //     display: "block",
-              //   },
-              // },
+              "&.current>div": { opacity: 0 },
+
+              "&:hover": {
+                fontWeight: "bold",
+                "&>div": {
+                  top: -10,
+                  left: -10,
+                  opacity: 1,
+                  position: "absolute",
+                  transform: "rotate(-20deg)",
+                  transition: "1s all",
+                },
+              },
             }}
           >
+            <Fade
+              in={true}
+              style={{ transformOrigin: "0 0 0" }}
+              {...(true ? { timeout: 1000 } : {})}
+            >
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: 12,
+                  transform: "rotate(3deg)",
+                  "& img": { width: 44, height: "auto" },
+                }}
+              >
+                {/* eslint-disable-next-line */}
+
+                <img src="/images/airplane.png" alt="Headline curve" />
+              </Box>
+            </Fade>
             {label}
           </Button>
         </NextLink>

@@ -80,6 +80,7 @@ const joinNow = () => {
 
   const isBottom = (el: HTMLElement | null) =>
     el && el.getBoundingClientRect().bottom >= 80;
+
   return (
     <Box
       sx={{

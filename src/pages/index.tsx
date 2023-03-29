@@ -14,10 +14,12 @@ const Home: NextPageWithLayout = () => {
   return (
     <>
       <DynamicHomeHero />
-
       <DynamicJoinNow />
+<<<<<<< Updated upstream
       <DynamicReferences />
 
+=======
+>>>>>>> Stashed changes
       {/* <DynamicHomePopularCourse />
       <DynamicHomeFeature />
       <DynamicHomeTestimonial />
