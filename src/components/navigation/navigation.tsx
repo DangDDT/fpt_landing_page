@@ -45,8 +45,9 @@ function Navigation({ onClick }: { onClick: VoidFunction }) {
               "&:hover": {
                 fontWeight: "bold",
                 "&>div": {
-                  top: -10,
+                  top: -5,
                   left: -10,
+                  display: "block",
                   opacity: 1,
                   position: "absolute",
                   transform: "rotate(-20deg)",

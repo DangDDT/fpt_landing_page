@@ -37,7 +37,7 @@ const ProgramList: FC = () => {
     >
       <Container maxWidth="lg">
         <BaseBreadCrumbs
-          previousLink={[{ href: "/", name: "Homepages" }]}
+          previousLink={[{ href: "/", name: "Homepage" }]}
           currentLink={"Programs"}
         />
         <Grid
