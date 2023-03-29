@@ -53,6 +53,10 @@
   left: -25px;
 }
 
+.reference.slick-slide {
+  text-align:center;
+  margin: 0 !important;
+}
 /* Dots */
 .slick-dotted.slick-slider {
   margin-bottom: 30px;

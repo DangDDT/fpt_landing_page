@@ -2,14 +2,15 @@ import { Box } from "@mui/system";
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-import { Link as MuiLink } from "@mui/material";
+import { Container, Fade, Link as MuiLink } from "@mui/material";
+import FadeInSection from "../animations/fade-in-section";
 
 interface Props {
   textTilte?: String | null;
   textDate?: String | null;
   textDetail?: String | null;
 }
-function slideScreen({ textTilte, textDate, textDetail }: Props) {
+function SlideScreen({ textTilte, textDate, textDetail }: Props) {
   return (
     <Box
       sx={{
@@ -42,20 +43,27 @@ function slideScreen({ textTilte, textDate, textDetail }: Props) {
             height: "30%",
           }}
         >
-          <Box
-            sx={{
-              color: "primary.contrastText",
-              fontSize: "40px",
-              fontWeight: "fontWeightBold",
-            }}
-          >
-            JOIN NOW
+          <Box display={"flex"} alignItems="center" width={"100%"} gap={5}>
+            <Box
+              sx={{
+                color: "primary.contrastText",
+                fontSize: "80px",
+                fontWeight: "bold",
+              }}
+            >
+              Join Now
+            </Box>
+            <Box
+              sx={{
+                height: "1.5px",
+                width: "40%",
+                backgroundColor: "primary.contrastText",
+              }}
+            ></Box>
           </Box>
-          <div
-            style={{ height: "1.5px", width: "40%", backgroundColor: "#fff" }}
-          ></div>
         </Box>
         {/* set bottom content */}
+
         <Box
           sx={{
             display: "flex",
@@ -128,25 +136,16 @@ function slideScreen({ textTilte, textDate, textDetail }: Props) {
         </Box>
       </Box>
       {/* set right image */}
-
       <Box
         sx={{
           width: "40%",
           height: "100%",
-          padding: "5% 0 0 8%",
+          backgroundColor: "#eaeaea",
+          borderRadius: "30px",
         }}
-      >
-        <Box
-          sx={{
-            width: "100%",
-            height: "100%",
-            backgroundColor: "#eaeaea",
-            borderRadius: "30px",
-          }}
-        ></Box>
-      </Box>
+      ></Box>
     </Box>
   );
 }
 
-export default slideScreen;
+export default SlideScreen;

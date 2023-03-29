@@ -5,35 +5,34 @@ import Image from "next/image";
 
 const Footer: FC = () => {
   return (
-    <></>
-    // <Box
-    //   component="footer"
-    //   sx={{
-    //     backgroundColor: "primary.dark",
-    //     color: "primary.contrastText",
-    //     padding: "10px 5%",
-    //   }}
-    // >
-    //   <Box
-    //     sx={{
-    //       display: "flex",
-    //       flexDirection: "row",
-    //       justifyContent: "space-between",
-    //     }}
-    //   >
-    //     <Image
-    //       src="/images/Logo_Đại_học_FPT.png"
-    //       width={100}
-    //       height={50}
-    //       quality={100}
-    //       alt="Testimonial img"
-    //     />
+    <Box
+      component="footer"
+      sx={{
+        backgroundColor: "primary.dark",
+        color: "primary.contrastText",
+        padding: "10px 5%",
+      }}
+    >
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}
+      >
+        <Image
+          src="/images/Logo_Đại_học_FPT.png"
+          width={100}
+          height={50}
+          quality={100}
+          alt="Testimonial img"
+        />
 
-    //     <p style={{ fontSize: "12px" }}>
-    //       Copyright @ 2023 International Collaboration
-    //     </p>
-    //   </Box>
-    // </Box>
+        <p style={{ fontSize: "12px" }}>
+          Copyright @ 2023 International Collaboration
+        </p>
+      </Box>
+    </Box>
   );
 };
 

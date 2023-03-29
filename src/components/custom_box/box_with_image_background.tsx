@@ -19,18 +19,19 @@ function BoxWithImageBackground({ textTop, textBottom, imageUrl }: Props) {
         backgroundImage: "linear-gradient(#ff000000, #F27024)",
       }}
     >
-      <Container
+      <Box
         sx={{
           display: "flex",
           flexDirection: "column",
           mt: "50px",
+          pl: "5%",
         }}
       >
         <Typography
           sx={{
             lineHeight: "1",
-            fontSize: "60px",
-            fontWeight: "700",
+            fontSize: "95px",
+            fontWeight: "bold",
             color: "primary.contrastText",
           }}
         >
@@ -39,15 +40,15 @@ function BoxWithImageBackground({ textTop, textBottom, imageUrl }: Props) {
         <Typography
           sx={{
             lineHeight: "1",
-            fontSize: "70px",
-            fontWeight: "700",
+            fontSize: "115px",
+            fontWeight: "bold",
             opacity: ".9",
             color: "primary.contrastText",
           }}
         >
           {textBottom ?? "TextBottom"}
         </Typography>
-      </Container>
+      </Box>
     </Box>
   );
 }

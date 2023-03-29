@@ -10,8 +10,8 @@ function HomeHero() {
         position: "relative",
         backgroundRepeat: "none",
         height: "100vh",
-        background: 'url("./images/home-hero-bg.webp") no-repeat',
-        backgroundSize: "100%",
+        background: 'url("./images/home-hero-bg.png") no-repeat',
+        backgroundSize: "cover",
         filter: "alpha(opacity=40)",
       }}
     >

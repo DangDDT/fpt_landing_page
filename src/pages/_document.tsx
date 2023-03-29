@@ -48,6 +48,8 @@ class MyDocument extends Document<DocumentProps> {
             href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,500;1,700&display=swap"
             rel="stylesheet"
           />
+          <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+          <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
 
           {/* Inject MUI styles first to match with the prepend: true configuration. */}
           {this.props.emotionStylesTags}

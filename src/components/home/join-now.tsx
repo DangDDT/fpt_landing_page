@@ -6,8 +6,9 @@ import Slider, { Settings } from "react-slick";
 import SlideScreen from "./slide-screen";
 import { useTheme, styled } from "@mui/material/styles";
 import { IconButton, useMediaQuery } from "@mui/material";
-import NavigateNextIcon from "@mui/icons-material/ArrowForwardIosRounded";
-import NavigateBeforeIcon from "@mui/icons-material/ArrowBackIosNewRounded";
+import { SliderArrow } from "../slider/slider-arrow";
+import SliderCommon from "../slider/slider-common";
+import FadeInSection from "../animations/fade-in-section";
 
 const NavbarTopAnchor = styled("div")(() => ({
   display: "block",
@@ -22,51 +23,21 @@ const NavbarBottomAnchor = styled("div")(() => ({
   visibility: "hidden",
 }));
 
-interface SliderArrowArrow {
-  onClick?: () => void;
-  type: "next" | "prev";
-  className?: "string";
-}
-
-const SliderArrow: FC<SliderArrowArrow> = (props) => {
-  const { onClick, type } = props;
-  return (
-    <IconButton
-      sx={{
-        position: "absolute",
-        bottom: "30%",
-        right: type === "next" ? "10px !important " : "unset !important",
-        left: type === "prev" ? "10px !important " : "unset !important",
-        zIndex: 10,
-      }}
-      disableRipple
-      color="inherit"
-      onClick={onClick}
-    >
-      {type === "next" ? (
-        <NavigateNextIcon sx={{ fontSize: 50 }} />
-      ) : (
-        <NavigateBeforeIcon sx={{ fontSize: 50 }} />
-      )}
-    </IconButton>
-  );
-};
-const sliderConfig: Settings = {
-  infinite: true,
-  autoplay: false,
-  speed: 500,
-  slidesToScroll: 1,
-  prevArrow: <SliderArrow type="prev" />,
-  nextArrow: <SliderArrow type="next" />,
-};
 const joinNow = () => {
-  const { colorMenu, setColorMenu } = useContext(ColorMenuContext);
+  const { setColorMenu } = useContext(ColorMenuContext);
   const trackScrolling = useCallback(() => {
     const wrappedTopElementId = `__isTopDynamicJoinNow`;
+    const wrappedBottomElementId = `__isBottomDynamicJoinNow`;
     const wrappedTopElement = document.getElementById(wrappedTopElementId);
+    const wrappedBottomElement = document.getElementById(
+      wrappedBottomElementId
+    );
     if (isTop(wrappedTopElement)) {
       setColorMenu("black");
     } else if (isBottom(wrappedTopElement)) {
+      setColorMenu("primary");
+    }
+    if (isTop(wrappedBottomElement)) {
       setColorMenu("primary");
     }
   }, []);
@@ -86,36 +57,22 @@ const joinNow = () => {
     <Box
       sx={{
         height: "103vh",
-        backgroundColor: "orange",
+        backgroundColor: "primary.main",
         position: "relative",
       }}
     >
       <NavbarTopAnchor id="__isTopDynamicJoinNow"></NavbarTopAnchor>
-
-      <Slider {...sliderConfig}>
-        <SlideScreen
-          textTilte={"TEN CHUONG TRINH 1"}
-          textDate={"DD/MM/YYYY"}
-          textDetail={
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Nisltincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum ..."
-          }
-        />
-
-        <SlideScreen
-          textTilte={"TEN CHUONG TRINH 2"}
-          textDate={"DD/MM/YYYY"}
-          textDetail={
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Nisltincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum ..."
-          }
-        />
-        <SlideScreen
-          textTilte={"TEN CHUONG TRINH 3"}
-          textDate={"DD/MM/YYYY"}
-          textDetail={
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Nisltincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum ..."
-          }
-        />
-      </Slider>
+      <SliderCommon>
+        {Array.from({ length: 3 }, (v, k) => k).map((e, index) => (
+          <SlideScreen
+            textTilte={`TEN CHUONG TRINH ${index + 1}`}
+            textDate={"DD/MM/YYYY"}
+            textDetail={
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Nisltincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum ..."
+            }
+          />
+        ))}
+      </SliderCommon>
       <NavbarBottomAnchor id="__isBottomDynamicJoinNow"></NavbarBottomAnchor>
     </Box>
   );

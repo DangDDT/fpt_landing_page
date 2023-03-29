@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useCallback, useEffect } from "react";
 import Head from "next/head";
 import type { AppProps } from "next/app";
 import { CssBaseline } from "@mui/material";
@@ -24,6 +24,10 @@ type AppPropsWithLayout = AppProps & {
 
 const App: FC<AppPropsWithLayout> = (props: AppPropsWithLayout) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+
+  useEffect(() => {
+    window.history.scrollRestoration = "manual";
+  }, []);
 
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout || ((page) => page);

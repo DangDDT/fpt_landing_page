@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import { NextPageWithLayout } from "@/interfaces/layout";
 import { MainLayout } from "@/components/layout";
 import { Hidden, styled } from "@mui/material";
+import FadeInSection from "@/components/animations/fade-in-section";
 
 const DynamicHomeHero = dynamic(() => import("../components/home/hero"));
 const DynamicJoinNow = dynamic(() => import("../components/home/join-now"));
@@ -13,9 +14,15 @@ const DynamicReferences = dynamic(
 const Home: NextPageWithLayout = () => {
   return (
     <>
-      <DynamicHomeHero />
-      <DynamicJoinNow />
-      <DynamicReferences />
+      <FadeInSection>
+        <DynamicHomeHero />
+      </FadeInSection>
+      <FadeInSection>
+        <DynamicJoinNow />
+      </FadeInSection>
+      <FadeInSection>
+        <DynamicReferences />
+      </FadeInSection>
 
       {/* <DynamicHomePopularCourse />
       <DynamicHomeFeature />
