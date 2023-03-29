@@ -15,11 +15,8 @@ const Home: NextPageWithLayout = () => {
     <>
       <DynamicHomeHero />
       <DynamicJoinNow />
-<<<<<<< Updated upstream
       <DynamicReferences />
 
-=======
->>>>>>> Stashed changes
       {/* <DynamicHomePopularCourse />
       <DynamicHomeFeature />
       <DynamicHomeTestimonial />

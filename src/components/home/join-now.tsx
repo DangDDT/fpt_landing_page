@@ -22,13 +22,6 @@ const NavbarBottomAnchor = styled("div")(() => ({
   visibility: "hidden",
 }));
 
-const settings = {
-  dots: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-};
 interface SliderArrowArrow {
   onClick?: () => void;
   type: "next" | "prev";
@@ -57,6 +50,14 @@ const SliderArrow: FC<SliderArrowArrow> = (props) => {
       )}
     </IconButton>
   );
+};
+const sliderConfig: Settings = {
+  infinite: true,
+  autoplay: false,
+  speed: 500,
+  slidesToScroll: 1,
+  prevArrow: <SliderArrow type="prev" />,
+  nextArrow: <SliderArrow type="next" />,
 };
 const joinNow = () => {
   const { colorMenu, setColorMenu } = useContext(ColorMenuContext);
@@ -91,7 +92,7 @@ const joinNow = () => {
     >
       <NavbarTopAnchor id="__isTopDynamicJoinNow"></NavbarTopAnchor>
 
-      <Slider {...settings}>
+      <Slider {...sliderConfig}>
         <SlideScreen
           textTilte={"TEN CHUONG TRINH 1"}
           textDate={"DD/MM/YYYY"}
