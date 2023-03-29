@@ -2,14 +2,13 @@ import { Container } from "@mui/material";
 import { Box } from "@mui/system";
 import Image from "next/image";
 import React from "react";
-import EditIcon from "../../../public/images/edit.svg";
+import RightTitle from "./right-title";
 
 const profile = () => {
   return (
-    <Box sx={{ height: "100vh", width: "100%" }}>
+    <Box sx={{ height: "150vh", width: "100%" }}>
       <Container
         sx={{
-          backgroundColor: "#aeaeae",
           height: "100%",
           width: "70%",
           paddingTop: "10%",
@@ -21,16 +20,16 @@ const profile = () => {
       >
         <Box
           sx={{
-            width: "400px",
-            height: "350px",
+            width: "350px",
+            height: "300px",
             borderRadius: "30px",
             backgroundColor: "#fff",
             boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
+            justifyContent: "flex-end",
             alignItems: "center",
-            paddingTop: "10px",
+            paddingBottom: "10px",
           }}
         >
           <Box
@@ -50,9 +49,19 @@ const profile = () => {
           </Box>
           <h3 style={{ margin: "10px 0 0 0" }}>NGUYEN CONG KHANH</h3>
           <p style={{ margin: "0" }}>khanhncse130305@fpt.edu.vn</p>
-          <Box sx={{ display: "flex", flexDirection: "row" }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              gap: "5px",
+              cursor: "pointer",
+              fontWeight: "fontWeightRegular",
+              marginTop: "10px",
+              color: "text.secondary",
+            }}
+          >
             <p>Edit</p>
-            {/* <EditIcon /> */}
+            <Image src={"/images/edit.svg"} width={15} height={15}></Image>
           </Box>
         </Box>
         <Box
@@ -62,9 +71,37 @@ const profile = () => {
             borderRadius: "30px",
             backgroundColor: "#fff",
             boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+            display: "flex",
+            flexDirection: "column",
+            padding: "20px 0 0 60px",
           }}
         >
           {/* left content */}
+          <RightTitle NameText={"Full name"} />
+          <Box
+            sx={{
+              fontWeight: "fontWeightRegular",
+            }}
+          >
+            <p>NGUYEN CONG KHANH</p>
+          </Box>
+
+          <RightTitle NameText={"Roll number"} />
+          <Box
+            sx={{
+              fontWeight: "fontWeightRegular",
+            }}
+          >
+            <p>SE130305</p>
+          </Box>
+          <RightTitle NameText={"Main major"} />
+          <Box
+            sx={{
+              fontWeight: "fontWeightRegular",
+            }}
+          >
+            <p>Digital Art & Design</p>
+          </Box>
         </Box>
       </Container>
     </Box>

@@ -16,7 +16,6 @@ function BoxWithImageBackground({ textTop, textBottom, imageUrl }: Props) {
         height: "300px",
         position: "absolute",
         bottom: "0",
-        //tạm
         backgroundImage: "linear-gradient(#ff000000, #F27024)",
       }}
     >
@@ -33,7 +32,6 @@ function BoxWithImageBackground({ textTop, textBottom, imageUrl }: Props) {
             fontSize: "60px",
             fontWeight: "700",
             color: "primary.contrastText",
-            opacity: ".7",
           }}
         >
           {textTop ?? "TextTop"}
@@ -43,7 +41,7 @@ function BoxWithImageBackground({ textTop, textBottom, imageUrl }: Props) {
             lineHeight: "1",
             fontSize: "70px",
             fontWeight: "700",
-            opacity: ".7",
+            opacity: ".9",
             color: "primary.contrastText",
           }}
         >

@@ -83,7 +83,7 @@ function slideScreen({ textTilte, textDate, textDetail }: Props) {
             sx={{
               margin: "0",
               fontSize: "30px",
-              fontWeight: "fontWeightBold",
+              fontWeight: "fontWeightMedium",
             }}
           >
             {textDate}
@@ -115,9 +115,10 @@ function slideScreen({ textTilte, textDate, textDetail }: Props) {
               <MuiLink
                 underline="none"
                 sx={{
-                  fontWeight: "fontWeightBold",
+                  fontWeight: "fontWeightRegular",
                   fontSize: "35px",
                   cursor: "pointer",
+                  color: "#000",
                 }}
               >
                 SEE DETAIL

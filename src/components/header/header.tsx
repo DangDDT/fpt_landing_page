@@ -50,7 +50,7 @@ const Header: FC = () => {
                   display: "flex",
                   backgroundColor:
                     colorMenu === "primary" ? "primary.light" : "primary.dark",
-                  padding: "10px 40px",
+                  padding: "5px 30px",
                   borderRadius: "25px",
                   alignItems: "center",
                   justifyContent: "center",

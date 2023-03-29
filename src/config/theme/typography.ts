@@ -9,7 +9,7 @@ const headingLineHeight = 1.4
 const typography: TypographyOptions = {
   fontFamily,
   fontWeightLight: 400,
-  fontWeightRegular: 400,
+  fontWeightRegular: 500,
   fontWeightMedium: 600,
   fontWeightBold: 700,
   h1: {

@@ -11,7 +11,7 @@ import NavigateBeforeIcon from "@mui/icons-material/ArrowBackIosNewRounded";
 
 const NavbarTopAnchor = styled("div")(() => ({
   display: "block",
-  position: "relative",
+  position: "absolute",
   top: "-30px",
   visibility: "hidden",
 }));
@@ -90,7 +90,7 @@ const joinNow = () => {
     >
       <NavbarTopAnchor id="__isTopDynamicJoinNow"></NavbarTopAnchor>
 
-      <Slider {...sliderConfig}>
+      <Slider {...settings}>
         <SlideScreen
           textTilte={"TEN CHUONG TRINH 1"}
           textDate={"DD/MM/YYYY"}

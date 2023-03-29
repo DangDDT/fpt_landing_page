@@ -1,8 +1,6 @@
 import React, { FC } from "react";
 import Box from "@mui/material/Box";
 import BoxWithImageBackground from "../custom_box/box_with_image_background";
-// import HeroImg from "/images/home-feature.png";
-import JoinNow from "./join-now";
 function HomeHero() {
   return (
     <Box
@@ -10,8 +8,11 @@ function HomeHero() {
       sx={{
         backgroundColor: "Background.paper",
         position: "relative",
+        backgroundRepeat: "none",
         height: "100vh",
-        // backgroundImage: `url(${HeroImg})`,
+        background: 'url("./images/home-hero-bg.webp") no-repeat',
+        backgroundSize: "100%",
+        filter: "alpha(opacity=40)",
       }}
     >
       <BoxWithImageBackground

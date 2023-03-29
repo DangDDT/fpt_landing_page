@@ -6,6 +6,7 @@ import NextLink from "next/link";
 import { Button } from "@mui/material";
 import { useRouter } from "next/router";
 import { ColorMenuContext } from "@/providers/context";
+
 function Navigation({ onClick }: { onClick: VoidFunction }) {
   const router = useRouter();
   return (
