@@ -8,8 +8,10 @@ import { Navigation, AuthNavigation } from "@/components/navigation";
 import { useTheme } from "@mui/material/styles";
 import { Menu, Close } from "@mui/icons-material";
 import { ColorMenuContext } from "@/providers/context";
+import { useRouter } from "next/router";
 
 const Header: FC = () => {
+  const router = useRouter();
   const [visibleMenu, setVisibleMenu] = useState<boolean>(false);
   const { breakpoints } = useTheme();
   const matchMobileView = useMediaQuery(breakpoints.down("md"));
@@ -39,9 +41,10 @@ const Header: FC = () => {
             </Box>
             <Box
               sx={{
-                position: "fixed",
+                position: router.pathname !== "/register" ? "fixed" : "unset",
                 top: "20px",
                 zIndex: "9999",
+                pt: router.pathname === "/register" ? "20px" : null,
               }}
             >
               <Box
