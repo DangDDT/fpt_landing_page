@@ -4,20 +4,17 @@ import { NextPageWithLayout } from "@/interfaces/layout";
 import { MainLayout } from "@/components/layout";
 // import { HomeFeature, HomeHero, HomePopularCourse, HomeTestimonial, HomeOurMentors, DynamicHomeNewsLetter } from '@/components/home'
 
-const DynamicHomeHero = dynamic(() => import("../../components/home/hero"));
-const DynamicHomePopularCourse = dynamic(
-  () => import("../../components/home/popular-courses")
+const DynamicRegister = dynamic(
+  () => import("../../components/register/register")
 );
 
-
-const Register:NextPageWithLayout = () =>{
+const Register: NextPageWithLayout = () => {
   return (
-  <>
-     <DynamicHomeHero />
-      {/* <DynamicHomePopularCourse /> */}
-  </>
-  )
-}
-Register.getLayout = (page) => <MainLayout>{page}</MainLayout>
+    <>
+      <DynamicRegister />
+    </>
+  );
+};
+Register.getLayout = (page) => <MainLayout>{page}</MainLayout>;
 
 export default Register;

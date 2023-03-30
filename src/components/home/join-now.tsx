@@ -1,11 +1,10 @@
 import { ColorMenuContext } from "@/providers/context";
-import { Box } from "@mui/system";
 import React, { FC, useCallback, useContext, useEffect } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Slider, { Settings } from "react-slick";
 import SlideScreen from "./slide-screen";
 import { useTheme, styled } from "@mui/material/styles";
-import { IconButton, useMediaQuery } from "@mui/material";
+import { Box, IconButton, useMediaQuery } from "@mui/material";
 import { SliderArrow } from "../slider/slider-arrow";
 import SliderCommon from "../slider/slider-common";
 import FadeInSection from "../animations/fade-in-section";

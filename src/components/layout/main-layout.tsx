@@ -1,10 +1,10 @@
-import React, { FC, ReactNode } from 'react'
-import Box from '@mui/material/Box'
-import { Footer } from '@/components/footer'
-import { Header } from '@/components/header'
+import React, { FC, ReactNode } from "react";
+import Box from "@mui/material/Box";
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
 
 interface Props {
-  children: ReactNode
+  children: ReactNode;
 }
 
 const MainLayout: FC<Props> = ({ children }) => {
@@ -14,7 +14,7 @@ const MainLayout: FC<Props> = ({ children }) => {
       {children}
       <Footer />
     </Box>
-  )
-}
+  );
+};
 
-export default MainLayout
+export default MainLayout;

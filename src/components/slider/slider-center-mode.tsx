@@ -8,24 +8,26 @@ import { SliderArrow } from "./slider-arrow";
 interface Props {
   children: ReactNode;
 }
-const SwiperButtonPrev = () => {
-  const swiper = useSwiper();
-  return (
-    <SliderArrow onClick={() => swiper.slidePrev()} type={"prev"}></SliderArrow>
-  );
-};
-const SwiperButtonNext = () => {
-  const swiper = useSwiper();
-  return (
-    <SliderArrow onClick={() => swiper.slideNext()} type={"next"}></SliderArrow>
-  );
-};
+// const SwiperButtonPrev = () => {
+//   const swiper = useSwiper();
+//   return (
+//     <SliderArrow onClick={() => swiper.slidePrev()} type={"prev"}></SliderArrow>
+//   );
+// };
+// const SwiperButtonNext = () => {
+//   const swiper = useSwiper();
+//   return (
+//     <SliderArrow onClick={() => swiper.slideNext()} type={"next"}></SliderArrow>
+//   );
+// };
 const SliderCenterMode: FC<Props> = ({ children }: Props) => {
   const { breakpoints } = useTheme();
   const matchMobileView = useMediaQuery(breakpoints.down("md"));
 
   return (
     <>
+      {/* <SwiperButtonPrev /> */}
+
       <Swiper
         slidesPerView={3}
         spaceBetween={60}
@@ -37,10 +39,9 @@ const SliderCenterMode: FC<Props> = ({ children }: Props) => {
         modules={[Navigation]}
         className="mySwiper"
       >
-        <SwiperButtonPrev />
         {children}
-        <SwiperButtonNext />
       </Swiper>
+      {/* <SwiperButtonNext /> */}
     </>
   );
 };

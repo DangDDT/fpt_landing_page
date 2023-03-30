@@ -1,18 +1,42 @@
-import React from "react";
-import { Box, Card, Container, Fade, Slide, Typography } from "@mui/material";
+import React, { useRef } from "react";
+import {
+  Box,
+  Button,
+  Card,
+  Container,
+  Fade,
+  Slide,
+  Typography,
+} from "@mui/material";
 import NavigateNextIcon from "@mui/icons-material/ArrowForwardIosRounded";
 import NavigateBeforeIcon from "@mui/icons-material/ArrowBackIosNewRounded";
-
-import { SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, useSwiper, SwiperSlide } from "swiper/react";
 import { SliderArrow } from "../slider/slider-arrow";
 import SliderCenterMode from "../slider/slider-center-mode";
+
+// const SwiperButtonPrev = () => {
+//   const swiper = useSwiper();
+//   return (
+//     <SliderArrow onClick={() => swiper.slidePrev} type={"prev"}></SliderArrow>
+//   );
+// };
+// const SwiperButtonNext = () => {
+//   const swiper = useSwiper();
+//   return (
+//     <SliderArrow onClick={() => swiper.slideNext} type={"next"}></SliderArrow>
+//   );
+// };
+
 const References = () => {
   const swiper = useSwiper();
+  const swiperRef = useRef();
   return (
-    <Container maxWidth="xl" sx={{ position: "relative" }}>
-      <Box
+    <Box sx={{ position: "relative", height: "100vh" }}>
+      {/* <SwiperButtonPrev /> */}
+
+      <Container
         sx={{
-          height: "100vh",
+          height: "300px",
           backgroundColor: "background.light",
           position: "relative",
         }}
@@ -28,8 +52,11 @@ const References = () => {
             {"Reference"}
           </Typography>
         </Box>
-        <Box sx={{ height: 300 }}>
-          <SliderCenterMode>
+
+        <Button onClick={() => swiper.slidePrev()}>Prev</Button>
+
+        <SliderCenterMode>
+          <Swiper>
             {Array.from({ length: 8 }, (v, k) => k).map((e, index) => (
               <SwiperSlide key={index}>
                 <img
@@ -40,10 +67,11 @@ const References = () => {
                 ></img>
               </SwiperSlide>
             ))}
-          </SliderCenterMode>
-        </Box>
-      </Box>
-    </Container>
+          </Swiper>
+        </SliderCenterMode>
+      </Container>
+      {/* <SwiperButtonNext /> */}
+    </Box>
   );
 };
 
