@@ -9,8 +9,7 @@ interface SliderArrowArrow {
   className?: "string";
 }
 
-export const SliderArrow: FC<SliderArrowArrow> = (props) => {
-  const { onClick, type } = props;
+export function SliderArrow({ onClick, type }: SliderArrowArrow): HTMLElement {
   return (
     <IconButton
       sx={{
@@ -31,4 +30,4 @@ export const SliderArrow: FC<SliderArrowArrow> = (props) => {
       )}
     </IconButton>
   );
-};
+}

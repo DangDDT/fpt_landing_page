@@ -27,7 +27,8 @@
     "react-scroll": "^1.8.7",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
-    "slick-slider": "^1.8.2"
+    "slick-slider": "^1.8.2",
+    "swiper": "^9.1.1"
   },
   "devDependencies": {
     "@types/node": "17.0.25",

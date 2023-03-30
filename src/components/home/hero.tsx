@@ -15,6 +15,7 @@ function HomeHero() {
         filter: "alpha(opacity=40)",
       }}
     >
+      
       <BoxWithImageBackground
         textTop={"INTERNATIONAL"}
         textBottom={"COLLABORATION"}
