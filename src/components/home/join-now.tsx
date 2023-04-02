@@ -1,6 +1,5 @@
 import { ColorMenuContext } from "@/providers/context";
 import React, { FC, useCallback, useContext, useEffect } from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Slider, { Settings } from "react-slick";
 import SlideScreen from "./slide-screen";
 import { useTheme, styled } from "@mui/material/styles";
@@ -55,7 +54,7 @@ const joinNow = () => {
   return (
     <Box
       sx={{
-        height: "103vh",
+        height: "100vh",
         backgroundColor: "primary.main",
         position: "relative",
       }}
@@ -64,6 +63,7 @@ const joinNow = () => {
       <SliderCommon>
         {Array.from({ length: 3 }, (v, k) => k).map((e, index) => (
           <SlideScreen
+            key={index}
             textTilte={`TEN CHUONG TRINH ${index + 1}`}
             textDate={"DD/MM/YYYY"}
             textDetail={

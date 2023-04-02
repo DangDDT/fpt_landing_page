@@ -6,16 +6,15 @@ interface Props {
   children: ReactNode;
 }
 
-const sliderConfig: Settings = {
-  infinite: true,
-  autoplay: false,
-  speed: 500,
-  slidesToScroll: 1,
-  prevArrow: <SliderArrow type="prev" />,
-  nextArrow: <SliderArrow type="next" />,
-};
-
 const SliderCommon: FC<Props> = ({ children }: Props) => {
+  const sliderConfig: Settings = {
+    infinite: true,
+    autoplay: false,
+    speed: 500,
+    slidesToScroll: 1,
+    prevArrow: <SliderArrow type="prev" />,
+    nextArrow: <SliderArrow type="next" />,
+  };
   return (
     <div>
       <Slider {...sliderConfig}>{children}</Slider>

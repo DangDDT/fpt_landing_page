@@ -9,7 +9,7 @@ interface SliderArrowArrow {
   className?: "string";
 }
 
-export function SliderArrow({ onClick, type }: SliderArrowArrow): HTMLElement {
+export function SliderArrow({ onClick, type }: SliderArrowArrow) {
   return (
     <IconButton
       sx={{

@@ -12,6 +12,7 @@ function BoxWithImageBackground({ textTop, textBottom, imageUrl }: Props) {
   return (
     <Box
       sx={{
+        display: { maxWidth: 1500 },
         width: "100%",
         height: "300px",
         position: "absolute",

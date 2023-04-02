@@ -135,3 +135,64 @@
   opacity: 0.75;
   color: black;
 }
+
+
+.slick-track{
+  position: relative;
+}
+
+/*======= custom slick slider on reference page ========*/
+.refer-slide .slick-slider{
+  height: 400px;
+  width: 20%;
+}
+.refer-slide .slick-list{
+  height: 400px;
+  
+}
+.refer-slide .slick-track{
+  opacity: .5;
+  transition: .5s all;
+  position: relative;
+  padding: 50px 0;
+}
+
+.refer-slide .slick-center{
+  opacity: 1;
+  transform: scale(1.2);
+  transition: .5s all;
+}
+.refer-slide .slick-active{
+  position: relative;
+  cursor: pointer;
+}
+.refer-slide .slick-center .slide-item-cover span::before{
+  display: none !important;
+}
+.refer-slide .slide-item-cover span{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  
+  
+}
+.refer-slide .slide-item-cover span::before{
+  position: absolute;
+  content: "";
+  width: 100%;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 999;
+  background-color: #00000053;
+}
+
+.refer-slide .slide-item-cover a:active{
+  pointer-events: none;
+}
+
+.refer-slide .slick-center .slide-item-cover a:active{
+  pointer-events: visible;
+}

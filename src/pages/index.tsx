@@ -10,6 +10,9 @@ const DynamicJoinNow = dynamic(() => import("../components/home/join-now"));
 const DynamicReferences = dynamic(
   () => import("../components/home/references")
 );
+const DynamicReferencesInter = dynamic(
+  () => import("../components/home/references-alter")
+);
 
 const Home: NextPageWithLayout = () => {
   return (
@@ -20,10 +23,12 @@ const Home: NextPageWithLayout = () => {
       <FadeInSection>
         <DynamicJoinNow />
       </FadeInSection>
-      <FadeInSection>
+      {/* <FadeInSection>
         <DynamicReferences />
+      </FadeInSection> */}
+      <FadeInSection>
+        <DynamicReferencesInter />
       </FadeInSection>
-
       {/* <DynamicHomePopularCourse />
       <DynamicHomeFeature />
       <DynamicHomeTestimonial />
