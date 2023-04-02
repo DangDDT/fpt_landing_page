@@ -20,7 +20,6 @@ const ReferancesInter = () => {
         className="slide-item-cover"
         style={{ borderRadius: "20px", height: "100%", width: "100%" }}
       >
-        {num}
         <a href="http://localhost:3000/register">
           <Image
             src="/images/reference-img.png"
@@ -58,27 +57,29 @@ const ReferancesInter = () => {
           REFERENCE
         </Typography>
       </Box>
-      <IconButton
-        onClick={() => goNext()}
-        disableRipple
-        sx={{
-          display: { lg: "block", sm: "block", xs: "none" },
-          position: "absolute",
-          right: { lg: "10px", sm: "5px", xs: "0px" },
-          bottom: { lg: "25%", sm: "25%", xs: "35%" },
-          color: "primary.main",
-        }}
-      >
-        <NavigateNextIcon sx={{ fontSize: 50 }} />
-      </IconButton>
+
       <Box
         sx={{
           padding: "0% 5%",
           height: "auto",
           margin: { lg: "40px 0", sm: "40px 0", xs: "20px 0" },
           textAlign: "center",
+          position: "relative",
         }}
       >
+        <IconButton
+          onClick={() => goNext()}
+          disableRipple
+          sx={{
+            display: { lg: "block", sm: "block", xs: "none" },
+            position: "absolute",
+            right: { lg: "10px", sm: "5px", xs: "0px" },
+            bottom: { lg: "35%", sm: "25%", xs: "35%" },
+            color: "primary.main",
+          }}
+        >
+          <NavigateNextIcon sx={{ fontSize: 50 }} />
+        </IconButton>
         <Slider
           className="refer-slide"
           ref={customSlider}
@@ -122,20 +123,20 @@ const ReferancesInter = () => {
         >
           {renderSlides()}
         </Slider>
+        <IconButton
+          onClick={() => goPrev()}
+          disableRipple
+          sx={{
+            display: { lg: "block", sm: "block", xs: "none" },
+            position: "absolute",
+            left: "10px",
+            bottom: { lg: "35%", sm: "25%", xs: "35%" },
+            color: "primary.main",
+          }}
+        >
+          <NavigateBeforeIcon sx={{ fontSize: 50 }} />
+        </IconButton>
       </Box>
-      <IconButton
-        onClick={() => goPrev()}
-        disableRipple
-        sx={{
-          display: { lg: "block", sm: "block", xs: "none" },
-          position: "absolute",
-          left: "10px",
-          bottom: { lg: "25%", sm: "25%", xs: "35%" },
-          color: "primary.main",
-        }}
-      >
-        <NavigateBeforeIcon sx={{ fontSize: 50 }} />
-      </IconButton>
     </Box>
   );
 };
