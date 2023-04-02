@@ -261,6 +261,7 @@ const Register = () => {
               >
                 <Title number={"5"} title={"Date of birth"} />
                 <InputBar
+                  placeholderText={"DD/MM/YYYY"}
                   require={false}
                   width={"95%"}
                   name={"Major"}
