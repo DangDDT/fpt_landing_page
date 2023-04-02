@@ -6,8 +6,6 @@ import InputBar from "./input-bar";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import Image from "next/image";
-import { format } from "date-fns";
-import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import { data } from "./register.data";
 import { Program } from "@/interfaces/program";
@@ -262,12 +260,12 @@ const Register = () => {
                 }}
               >
                 <Title number={"5"} title={"Date of birth"} />
-                {/* <DayPicker
-                  mode="single"
-                  selected={selected}
-                  onSelect={setSelected}
-                  footer={footer}
-                /> */}
+                <InputBar
+                  require={false}
+                  width={"95%"}
+                  name={"Major"}
+                  value={undefined}
+                />
               </Box>
               <Box
                 sx={{
