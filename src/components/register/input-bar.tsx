@@ -7,6 +7,7 @@ interface props {
   value: any;
   width?: string | null;
   helperText?: ReactNode;
+  placeholderText?: string | null;
   error?: boolean;
   require: boolean;
 }
@@ -18,10 +19,9 @@ const InputBar = ({
   helperText,
   error,
   require,
+  placeholderText,
   ...props
 }: props) => {
-  const placeholderText = "Enter your answer here";
-
   return (
     <Box sx={{ margin: " 10px 0 0 20px" }}>
       <TextField
@@ -29,8 +29,9 @@ const InputBar = ({
         name={name}
         required={require}
         value={value}
+        style={{ fontWeight: "bold" }}
         error={error}
-        placeholder={placeholderText}
+        placeholder={placeholderText ?? "Enter your answer here"}
         variant="standard" // <== changed this
         InputProps={{
           disableUnderline: true, // <== change this
@@ -43,6 +44,7 @@ const InputBar = ({
           fontSize: "25px",
           justifyContent: "center",
           padding: " 0 20px",
+          fontWeight: "bold",
         }}
       ></TextField>
       {helperText && error && (

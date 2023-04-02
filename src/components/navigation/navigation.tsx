@@ -37,7 +37,10 @@ function Navigation({ onClick }: { onClick: VoidFunction }) {
               ...(destination === router.pathname && {
                 fontWeight: "bold",
               }),
-
+              ...(destination === "/logo" && {
+                fontSize: "1.5rem",
+                fontWeight: "bold",
+              }),
               "& > div": { display: "none" },
 
               "&.current>div": { opacity: 0 },

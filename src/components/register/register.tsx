@@ -10,6 +10,7 @@ import { format } from "date-fns";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import { data } from "./register.data";
+import { Program } from "@/interfaces/program";
 
 const RegisterSchema = Yup.object().shape({
   Program: Yup.object()
@@ -48,9 +49,9 @@ const Register = () => {
   const [TransferInfomation, setTransferInfomation] = React.useState<File[]>(
     []
   );
+  const [Program, setProgram] = React.useState<Program | null>(null);
   const formik = useFormik({
     initialValues: {
-      Program: "",
       FullName: "",
       RollNumber: "",
       PhoneNumber: "",
@@ -61,7 +62,6 @@ const Register = () => {
     validationSchema: RegisterSchema,
     onSubmit: (values, { resetForm }) => {
       const register = {
-        Program: values.Program,
         FullName: values.FullName,
         PhoneNumber: values.PhoneNumber,
         PassportNumber: values.PassportNumber,
@@ -94,6 +94,10 @@ const Register = () => {
       setTransferInfomation(newFiles);
     }
     console.log(TransferInfomation);
+  };
+  const handleProgram = (program: Program | null) => {
+    setProgram(program);
+    console.log(Program);
   };
   return (
     <Box
@@ -142,12 +146,22 @@ const Register = () => {
             <Title number={"1"} title={"Program*"} />
             <Select
               name="Program"
+              value={Program}
+              displayEmpty
+              renderValue={(selected) => {
+                if (selected === null) {
+                  return <em>Select Program</em>;
+                }
+
+                return selected.programName;
+              }}
               IconComponent={KeyboardArrowDownRoundedIcon}
               sx={{
                 width: "43%",
                 borderRadius: "25px",
                 height: "50px",
                 backgroundColor: "#D9D9D9",
+                fontWeight: "bold",
                 margin: "10px 0 0 20px",
                 ".MuiOutlinedInput-notchedOutline": { border: 0 },
                 "&.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline":
@@ -167,8 +181,17 @@ const Register = () => {
                 },
               }}
             >
+              <MenuItem disabled value="" onClick={() => handleProgram(null)}>
+                <em>Select Program</em>
+              </MenuItem>
               {data.map((item, index) => (
-                <MenuItem key={index} value={item.id} disableRipple>
+                <MenuItem
+                  key={index}
+                  value={item.id}
+                  disableRipple
+                  onClick={() => handleProgram(item)}
+                  sx={{ fontWeight: "bold" }}
+                >
                   {item.programName}
                 </MenuItem>
               ))}
@@ -284,6 +307,7 @@ const Register = () => {
               require={true}
               width={"95%"}
               {...formik.getFieldProps("ExpirationDate")}
+              placeholderText={"DD/MM/YYYY"}
               error={Boolean(
                 formik.touched.PassportNumber && formik.errors.PassportNumber
               )}
