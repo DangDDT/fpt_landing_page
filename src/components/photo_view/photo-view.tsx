@@ -19,8 +19,14 @@ function ImageView({ listImage }: Props) {
       {listImage.map((item, index) => {
         return (
           <PhotoView key={index} src={item}>
-            <Box pr={2} display={"inline-flex"}>
-              <img src={item} width={480} style={{ objectFit: "cover" }} />
+            <Box
+              pr={1}
+              sx={{
+                display: "inline-flex",
+                width: { lg: "20%", sm: "25%", xs: "100%" },
+              }}
+            >
+              <img src={item} width={"100%"} />
             </Box>
           </PhotoView>
         );

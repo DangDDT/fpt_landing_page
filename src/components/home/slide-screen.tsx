@@ -14,18 +14,19 @@ function SlideScreen({ textTilte, textDate, textDetail }: Props) {
   return (
     <Box
       sx={{
-        width: "85%",
+        width: { lg: "85%", sm: "90%", xs: "100%" },
         height: "100vh",
-        padding: "5% 0 4% 0",
+        padding: { lg: "5% 0 4% 0", sm: "2% 0 1% 0", xs: "5% 0 5% 0" },
         margin: "0 auto",
         display: "flex",
-        flexDirection: "row",
+        flexDirection: { lg: "row", sm: "column", xs: "column" },
       }}
     >
       {/* set left  */}
       <Box
         sx={{
-          width: "60%",
+          width: { lg: "60%", sm: "100%", xs: "100%" },
+          padding: { lg: "0", sm: "0 4%", xs: " 0 2%" },
           display: "flex",
           height: "100%",
           flexDirection: "column",
@@ -47,7 +48,7 @@ function SlideScreen({ textTilte, textDate, textDetail }: Props) {
             <Box
               sx={{
                 color: "primary.contrastText",
-                fontSize: "80px",
+                fontSize: { lg: "80px", sm: "40px", xs: "40px" },
                 fontWeight: "bold",
               }}
             >
@@ -70,14 +71,14 @@ function SlideScreen({ textTilte, textDate, textDetail }: Props) {
             flexDirection: "column",
             height: "70%",
             width: "100%",
-            justifyContent: "flex-end",
+            justifyContent: { lg: "flex-end", sm: "left", xs: "left" },
             textAlign: "left",
           }}
         >
           {/* set bottom title text */}
           <Box
             sx={{
-              fontSize: "45px",
+              fontSize: { lg: "45px", sm: "35px", xs: "25px" },
               fontWeight: "fontWeightBold",
               margin: "0",
               color: "primary.contrastText",
@@ -90,7 +91,7 @@ function SlideScreen({ textTilte, textDate, textDetail }: Props) {
           <Box
             sx={{
               margin: "0",
-              fontSize: "30px",
+              fontSize: { lg: "30px", sm: "20px", xs: "20px" },
               fontWeight: "fontWeightMedium",
             }}
           >
@@ -101,7 +102,7 @@ function SlideScreen({ textTilte, textDate, textDetail }: Props) {
           <Box
             sx={{
               margin: "0",
-              fontSize: "20px",
+              fontSize: { lg: "20px", sm: "15px", xs: "15px" },
               fontWeight: "fontWeightBold",
             }}
           >
@@ -114,8 +115,9 @@ function SlideScreen({ textTilte, textDate, textDetail }: Props) {
               display: "flex",
               flexDirection: "row",
               gap: "10px",
-              alignItems: "center",
+              justifyContent: { lg: "left", sm: "center", xs: "right" },
               marginTop: "20px",
+              margin: { sm: "30px" },
             }}
           >
             <Image src="/images/arrow.svg" width={180} height={30} />
@@ -124,7 +126,7 @@ function SlideScreen({ textTilte, textDate, textDetail }: Props) {
                 underline="none"
                 sx={{
                   fontWeight: "fontWeightRegular",
-                  fontSize: "35px",
+                  fontSize: { lg: "35px", sm: "25px", xs: "25px" },
                   cursor: "pointer",
                   color: "#000",
                 }}
@@ -138,12 +140,24 @@ function SlideScreen({ textTilte, textDate, textDetail }: Props) {
       {/* set right image */}
       <Box
         sx={{
-          width: "40%",
+          width: { lg: "40%", sm: "100%", xs: "100%" },
+          display: { lg: "block", sm: "block", xs: "block" },
+          marginTop: { lg: 0, sm: "20px", xs: "20px" },
+          textAlign: "center",
           height: "100%",
-          backgroundColor: "#eaeaea",
-          borderRadius: "30px",
+          justifyContent: "center",
         }}
-      ></Box>
+      >
+        <Box
+          sx={{
+            backgroundColor: "#eaeaea",
+            height: "100%",
+            width: { lg: "100%", sm: "80%", xs: "80%" },
+            margin: "0px auto",
+            borderRadius: "30px",
+          }}
+        ></Box>
+      </Box>
     </Box>
   );
 }

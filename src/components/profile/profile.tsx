@@ -7,11 +7,11 @@ import RightTitle from "./right-title";
 
 const profile = () => {
   return (
-    <Box sx={{ height: "150vh", width: "100%" }}>
+    <Box sx={{ height: "100vh", width: "100%" }}>
       <Container
         sx={{
           height: "100%",
-          width: "70%",
+          width: { lg: "70%", sm: "90%", xs: "90%" },
           paddingTop: "5%",
         }}
       >
@@ -22,14 +22,14 @@ const profile = () => {
         <Box
           sx={{
             display: "flex",
-            flexDirection: "row",
+            flexDirection: { lg: "row", sm: "row", xs: "column" },
             justifyContent: "center",
             gap: "50px",
           }}
         >
           <Box
             sx={{
-              width: "350px",
+              width: { lg: "350px", sm: "100%", xs: "100%" },
               height: "300px",
               borderRadius: "30px",
               backgroundColor: "#fff",
@@ -75,14 +75,14 @@ const profile = () => {
           </Box>
           <Box
             sx={{
-              width: "35%",
-              height: "500px",
+              width: { lg: "35%", sm: "100%", xs: "100%" },
+              height: { lg: "500px", sm: "500px", xs: "auto" },
               borderRadius: "30px",
               backgroundColor: "#fff",
               boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
               display: "flex",
               flexDirection: "column",
-              padding: "20px 0 0 60px",
+              padding: "20px 0 20px 60px",
             }}
           >
             {/* left content */}

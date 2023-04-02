@@ -59,7 +59,7 @@ const ProgramDetail: FC<Props> = ({ item }) => {
               />
             </Grid>
           </Fade>
-          <Grid item lg={6} xs={12}>
+          <Grid item lg={6} xs={12} justifyContent={"center"}>
             <Box ref={containerRef}>
               <Slide
                 direction="up"
@@ -170,15 +170,15 @@ const ProgramDetail: FC<Props> = ({ item }) => {
             </Box>
           </Grid>
         </Grid>
-        <Box height={24}></Box>
-        <Typography variant="h1">Photos of event</Typography>
-        <Box height={24}></Box>
+        <Typography variant="h1" margin={"20px"}>
+          Photos of event
+        </Typography>
         <Fade
           in={true}
           style={{ transformOrigin: "4 0 0" }}
           {...(true ? { timeout: 1500 } : {})}
         >
-          <Box>
+          <Box sx={{ width: "100%" }}>
             <ImageView
               listImage={Array.from({ length: 3 }, (v, i) => i).map(
                 (e) => item.imageUrl

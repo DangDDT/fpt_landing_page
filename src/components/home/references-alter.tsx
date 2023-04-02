@@ -14,7 +14,7 @@ import Image from "next/image";
 const ReferancesInter = () => {
   const renderSlides = () =>
     Array.from({ length: 8 }, (v, k) => k).map((num, index) => (
-      <div
+      <Box
         key={index}
         data-slick-index={index}
         className="slide-item-cover"
@@ -24,12 +24,12 @@ const ReferancesInter = () => {
         <a href="http://localhost:3000/register">
           <Image
             src="/images/reference-img.png"
-            width={220}
+            width={200}
             height={300}
           ></Image>
         </a>
         <div className="cover"></div>
-      </div>
+      </Box>
     ));
   const customSlider = React.createRef<Slider>();
   const goNext = () => {
@@ -40,10 +40,20 @@ const ReferancesInter = () => {
   };
 
   return (
-    <Box sx={{ position: "relative", height: "100vh", paddingTop: "11%" }}>
+    <Box
+      sx={{
+        position: "relative",
+        height: "100vh",
+        paddingTop: { lg: "11%", sm: "8%", xs: "5%" },
+      }}
+    >
       <Box sx={{ textAlign: "center" }}>
         <Typography
-          sx={{ fontSize: "60px", color: "primary.main", fontWeight: "700" }}
+          sx={{
+            fontSize: { lg: "60px", sm: "50px", xs: "40px" },
+            color: "primary.main",
+            fontWeight: "700",
+          }}
         >
           REFERENCE
         </Typography>
@@ -52,9 +62,10 @@ const ReferancesInter = () => {
         onClick={() => goNext()}
         disableRipple
         sx={{
+          display: { lg: "block", sm: "block", xs: "none" },
           position: "absolute",
-          right: "10px",
-          bottom: "25%",
+          right: { lg: "10px", sm: "5px", xs: "0px" },
+          bottom: { lg: "25%", sm: "25%", xs: "35%" },
           color: "primary.main",
         }}
       >
@@ -64,7 +75,7 @@ const ReferancesInter = () => {
         sx={{
           padding: "0% 5%",
           height: "auto",
-          margin: "40px 0",
+          margin: { lg: "40px 0", sm: "40px 0", xs: "20px 0" },
           textAlign: "center",
         }}
       >
@@ -81,8 +92,33 @@ const ReferancesInter = () => {
           centerPadding={"0px"}
           autoplay={false}
           speed={500}
-          // lazyLoad={"progressive"}
           pauseOnHover={true}
+          responsive={[
+            {
+              breakpoint: 1900,
+              settings: {
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: false,
+              },
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+              },
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                centerMode: false,
+              },
+            },
+          ]}
         >
           {renderSlides()}
         </Slider>
@@ -91,9 +127,10 @@ const ReferancesInter = () => {
         onClick={() => goPrev()}
         disableRipple
         sx={{
+          display: { lg: "block", sm: "block", xs: "none" },
           position: "absolute",
           left: "10px",
-          bottom: "25%",
+          bottom: { lg: "25%", sm: "25%", xs: "35%" },
           color: "primary.main",
         }}
       >

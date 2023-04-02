@@ -12,7 +12,6 @@ function BoxWithImageBackground({ textTop, textBottom, imageUrl }: Props) {
   return (
     <Box
       sx={{
-        display: { maxWidth: 1500 },
         width: "100%",
         height: "300px",
         position: "absolute",
@@ -31,7 +30,7 @@ function BoxWithImageBackground({ textTop, textBottom, imageUrl }: Props) {
         <Typography
           sx={{
             lineHeight: "1",
-            fontSize: "95px",
+            fontSize: { lg: "95px", sm: "70px", xs: "35px" },
             fontWeight: "bold",
             color: "primary.contrastText",
           }}
@@ -41,7 +40,8 @@ function BoxWithImageBackground({ textTop, textBottom, imageUrl }: Props) {
         <Typography
           sx={{
             lineHeight: "1",
-            fontSize: "115px",
+            fontSize: { lg: "115px", sm: "75px", xs: "40px" },
+
             fontWeight: "bold",
             opacity: ".9",
             color: "primary.contrastText",

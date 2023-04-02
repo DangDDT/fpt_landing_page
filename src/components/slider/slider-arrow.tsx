@@ -13,10 +13,11 @@ export function SliderArrow({ onClick, type }: SliderArrowArrow) {
   return (
     <IconButton
       sx={{
+        display: { lg: "block", sm: "block", xs: "none" },
         position: "absolute",
-        bottom: "30%",
-        right: type === "next" ? "10px !important " : "unset !important",
-        left: type === "prev" ? "10px !important " : "unset !important",
+        bottom: { lg: "30%", sm: "20%", xs: "20%" },
+        right: type === "next" ? "2% !important " : "unset !important",
+        left: type === "prev" ? "2% !important " : "unset !important",
         zIndex: 10,
       }}
       disableRipple
