@@ -1,4 +1,4 @@
-import { Box, Button, MenuItem, Select } from "@mui/material";
+import { Box, Button, MenuItem, Select, Typography } from "@mui/material";
 import React from "react";
 import Title from "./title";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
@@ -9,6 +9,7 @@ import Image from "next/image";
 import { format } from "date-fns";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
+import { data } from "./register.data";
 
 const RegisterSchema = Yup.object().shape({
   Program: Yup.object()
@@ -43,6 +44,10 @@ const RegisterSchema = Yup.object().shape({
   ExpirationDate: Yup.string().required("This is requied!"),
 });
 const Register = () => {
+  const [PassportImage, setPassportImage] = React.useState<File[]>([]);
+  const [TransferInfomation, setTransferInfomation] = React.useState<File[]>(
+    []
+  );
   const formik = useFormik({
     initialValues: {
       Program: "",
@@ -50,7 +55,6 @@ const Register = () => {
       RollNumber: "",
       PhoneNumber: "",
       PassportNumber: "",
-      //   ExpirationDate: "",
       FacebookLink: "",
     },
     enableReinitialize: true,
@@ -73,12 +77,24 @@ const Register = () => {
     //     history.push(`/login`);
     //   });
   });
-  const [selected, setSelected] = React.useState<Date>();
-
-  let footer = <p>Please pick a day.</p>;
-  if (selected) {
-    footer = <p> {format(selected, "PP")}.</p>;
-  }
+  const handlePassportImage = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      const files = Array.from(e.target.files)[0];
+      const newFiles = [...PassportImage, files];
+      setPassportImage(newFiles);
+    }
+    console.log(PassportImage);
+  };
+  const handleTransferInformation = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    if (e.target.files) {
+      const files = Array.from(e.target.files)[0];
+      const newFiles = [...TransferInfomation, files];
+      setTransferInfomation(newFiles);
+    }
+    console.log(TransferInfomation);
+  };
   return (
     <Box
       sx={{
@@ -151,10 +167,15 @@ const Register = () => {
                 },
               }}
             >
+              {data.map((item, index) => (
+                <MenuItem key={index} value={item.id} disableRipple>
+                  {item.programName}
+                </MenuItem>
+              ))}
+              {/* <MenuItem disableRipple>1</MenuItem>
               <MenuItem disableRipple>1</MenuItem>
               <MenuItem disableRipple>1</MenuItem>
-              <MenuItem disableRipple>1</MenuItem>
-              <MenuItem disableRipple>1</MenuItem>
+              <MenuItem disableRipple>1</MenuItem> */}
             </Select>
             <Box sx={{ display: "flex", width: "100%" }}>
               <Box
@@ -218,12 +239,12 @@ const Register = () => {
                 }}
               >
                 <Title number={"5"} title={"Date of birth"} />
-                <DayPicker
+                {/* <DayPicker
                   mode="single"
                   selected={selected}
                   onSelect={setSelected}
                   footer={footer}
-                />
+                /> */}
               </Box>
               <Box
                 sx={{
@@ -307,10 +328,53 @@ const Register = () => {
                 }}
               >
                 Upload your file here
-                <input type="file" hidden />
+                <input type="file" hidden onChange={handlePassportImage} />
               </Box>
             </Box>
-
+            {PassportImage.length > 0 && (
+              <>
+                <Box height={24}></Box>
+                <Box
+                  px={2}
+                  display={"flex"}
+                  flexWrap="wrap"
+                  width={"100%"}
+                  gap={1}
+                >
+                  {PassportImage.map((item, index) => (
+                    <>
+                      <Box
+                        key={index}
+                        borderRadius={2}
+                        padding={"5px 10px"}
+                        style={{ backgroundColor: "#D9D9D9" }}
+                      >
+                        <Typography>{item.name}</Typography>
+                      </Box>
+                    </>
+                  ))}
+                  <Box width={3}></Box>
+                  <Button
+                    component="label"
+                    variant="contained"
+                    fullWidth={false}
+                    size={"small"}
+                    style={{
+                      maxWidth: "30px",
+                      maxHeight: "30px",
+                      minWidth: "30px",
+                      minHeight: "30px",
+                      backgroundColor: "#D9D9D9",
+                      color: "background.paper",
+                      fontSize: "16px",
+                    }}
+                  >
+                    +
+                    <input type="file" hidden onChange={handlePassportImage} />
+                  </Button>
+                </Box>
+              </>
+            )}
             <Title number={"11"} title={"Transfer information"} />
             <Box
               sx={{
@@ -336,9 +400,65 @@ const Register = () => {
                 }}
               >
                 Upload your file here
-                <input type="file" hidden />
+                <input
+                  type="file"
+                  hidden
+                  onChange={handleTransferInformation}
+                />
               </Box>
             </Box>
+            {TransferInfomation.length > 0 && (
+              <>
+                <Box height={24}></Box>
+                <Box
+                  px={2}
+                  gap={1}
+                  display={"flex"}
+                  flexWrap="wrap"
+                  width={"100%"}
+                >
+                  {TransferInfomation.map((item, index) => (
+                    <>
+                      <Box
+                        key={index}
+                        borderRadius={2}
+                        padding={"5px 10px"}
+                        style={{
+                          backgroundColor: "#D9D9D9",
+                          color: "background.paper",
+                          fontSize: "16px",
+                        }}
+                      >
+                        <Typography>{item.name}</Typography>
+                      </Box>
+                    </>
+                  ))}
+                  <Box width={3}></Box>
+                  <Button
+                    variant="contained"
+                    fullWidth={false}
+                    component="label"
+                    size={"small"}
+                    style={{
+                      maxWidth: "30px",
+                      maxHeight: "30px",
+                      minWidth: "30px",
+                      minHeight: "30px",
+                      backgroundColor: "#D9D9D9",
+                      color: "background.paper",
+                      fontSize: "16px",
+                    }}
+                  >
+                    +
+                    <input
+                      type="file"
+                      hidden
+                      onChange={handleTransferInformation}
+                    />
+                  </Button>
+                </Box>
+              </>
+            )}
             <Box
               sx={{
                 width: "100%",
