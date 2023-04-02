@@ -18,7 +18,11 @@ function Navigation({ onClick }: { onClick: VoidFunction }) {
       }}
     >
       {navigations.map(({ path: destination, label }) => (
-        <NextLink key={destination} href={destination} passHref>
+        <NextLink
+          key={destination}
+          href={destination === "/logo" ? "/" : destination}
+          passHref
+        >
           <Button
             onClick={onClick}
             key={destination}

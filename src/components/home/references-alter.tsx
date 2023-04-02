@@ -20,7 +20,6 @@ const ReferancesInter = () => {
         className="slide-item-cover"
         style={{ borderRadius: "20px", height: "100%", width: "100%" }}
       >
-        {num}
         <a href="http://localhost:3000/register">
           <Image
             src="/images/reference-img.png"
