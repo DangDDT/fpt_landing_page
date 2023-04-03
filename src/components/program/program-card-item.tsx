@@ -54,7 +54,8 @@ const ProgramCardItem: FC<Props> = ({ item, index }) => {
                 loader={myLoader}
                 src={item.imageUrl as string}
                 width={570}
-                height={427}
+                height={300}
+                objectFit={"contain"}
                 alt={"Program " + item.id}
                 loading="lazy"
               />

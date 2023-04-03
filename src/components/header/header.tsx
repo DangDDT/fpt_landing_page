@@ -43,7 +43,7 @@ const Header: FC = () => {
               sx={{
                 position: router.pathname !== "/register" ? "fixed" : "unset",
                 top: "20px",
-                zIndex: "9999",
+                zIndex: "1",
                 pt: router.pathname === "/register" ? "20px" : null,
               }}
             >

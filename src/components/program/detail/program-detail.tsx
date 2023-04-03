@@ -4,8 +4,10 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { Program } from "@/interfaces/program";
 import { Container, Fade, Grid, Slide } from "@mui/material";
-import ImageView from "@/components/photo_view/photo-view";
+import ImageView from "@/components/photo_view/album-photo-view";
 import BaseBreadCrumbs from "@/components/breadscrumbs/breadcrumbs";
+import AlbumImageView from "@/components/photo_view/album-photo-view";
+import SinglePhotoView from "@/components/photo_view/single-photo-view";
 
 export const myLoader = ({ src }: { src: string }) => {
   return src;
@@ -47,16 +49,19 @@ const ProgramDetail: FC<Props> = ({ item }) => {
             {...(true ? { timeout: 1000 } : {})}
           >
             <Grid item lg={5} xs={12} justifyContent={"center"}>
-              <Image
+              <SinglePhotoView
+                image={item.detailImageUrl ?? (item.imageUrl as string)}
+              ></SinglePhotoView>
+              {/* <Image
                 style={{ borderRadius: "5%" }}
                 height={650}
                 width={600}
                 loader={myLoader}
-                src={item.imageUrl}
+                src={item.detailImageUrl ?? (item.imageUrl as string)}
                 objectFit={"cover"}
                 quality={100}
                 alt={`${item.programName}`}
-              />
+              /> */}
             </Grid>
           </Fade>
           <Grid item lg={6} xs={12} justifyContent={"center"}>
@@ -170,22 +175,24 @@ const ProgramDetail: FC<Props> = ({ item }) => {
             </Box>
           </Grid>
         </Grid>
-        <Typography variant="h1" margin={"20px"}>
-          Photos of event
-        </Typography>
-        <Fade
-          in={true}
-          style={{ transformOrigin: "4 0 0" }}
-          {...(true ? { timeout: 1500 } : {})}
-        >
-          <Box sx={{ width: "100%" }}>
-            <ImageView
-              listImage={Array.from({ length: 3 }, (v, i) => i).map(
-                (e) => item.imageUrl
-              )}
-            ></ImageView>
-          </Box>
-        </Fade>
+        {item.albumImageUrl && (
+          <>
+            <Typography variant="h1" my={5}>
+              Photos of event
+            </Typography>
+            <Fade
+              in={true}
+              style={{ transformOrigin: "4 0 0" }}
+              {...(true ? { timeout: 1500 } : {})}
+            >
+              <Box sx={{ width: "100%" }}>
+                <AlbumImageView
+                  listImage={item.albumImageUrl.map((e) => e)}
+                ></AlbumImageView>
+              </Box>
+            </Fade>
+          </>
+        )}
       </Container>
     </Box>
   );
