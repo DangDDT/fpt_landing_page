@@ -154,6 +154,8 @@ export const data: Array<Program> = [
     date: "29/11/2019",
     imageUrl:
       "https://daihoc.fpt.edu.vn/wp-content/uploads/2019/11/4-588x325.png",
+    detailImageUrl:
+      "https://daihoc.fpt.edu.vn/wp-content/uploads/2022/10/hoc_ky_tien_anh_o_nuoc_ngoai_sinh_vien_DhFPT-0.jpeg",
     albumImageUrl: [
       { src: "https://daihoc.fpt.edu.vn/wp-content/uploads/2022/10/hoc_ky_tien_anh_o_nuoc_ngoai_sinh_vien_DhFPT-8.jpeg", width: 910, height: 763 },
       { src: "https://daihoc.fpt.edu.vn/wp-content/uploads/2022/10/hoc_ky_tien_anh_o_nuoc_ngoai_sinh_vien_DhFPT-910.jpeg", width: 800, height: 1000 },
