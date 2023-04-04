@@ -23,7 +23,7 @@ const ReferancesInter = () => {
         <a href="http://localhost:3000/register">
           <Image
             src="/images/reference-img.png"
-            width={200}
+            width={250}
             height={300}
           ></Image>
         </a>

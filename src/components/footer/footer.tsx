@@ -18,6 +18,7 @@ const Footer: FC = () => {
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",
+          alignItems: "center",
         }}
       >
         <Image
@@ -25,12 +26,11 @@ const Footer: FC = () => {
           width={100}
           height={50}
           quality={100}
-          alt="Testimonial img"
         />
 
-        <p style={{ fontSize: "12px" }}>
-          Copyright @ 2023 International Collaboration
-        </p>
+        <Box sx={{ fontSize: { lg: "12px", sm: "10px", xs: "10px" } }}>
+          <p>Copyright @ 2023 International Collaboration</p>
+        </Box>
       </Box>
     </Box>
   );

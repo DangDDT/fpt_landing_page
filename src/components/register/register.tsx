@@ -105,7 +105,7 @@ const Register = () => {
     >
       <Box
         sx={{
-          width: "80%",
+          width: { lg: "80%", sm: "90%", xs: "95%" },
           height: "100%",
           backgroundColor: " #F8F8F8",
           margin: "5% auto",
@@ -117,7 +117,7 @@ const Register = () => {
       >
         <Box
           sx={{
-            height: "200px",
+            height: { lg: "200px", sm: "150px", xs: "80px" },
             width: "100%",
             borderTopRightRadius: "30px",
             background: 'url("/images/register-form-bg.png")',
@@ -127,16 +127,30 @@ const Register = () => {
             color: "primary.contrastText",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "flex-end",
-            padding: "0 7% 20px",
+            justifyContent: { lg: "flex-end", sm: "flex-end", xs: "center" },
+            padding: { lg: "0 7% 20px", sm: "0 5% 20px", xs: "0 5%" },
           }}
         >
-          <p style={{ fontWeight: "Bold", fontSize: "60px" }}>REGISTER FORM</p>
-          <p style={{ fontWeight: "400", fontSize: "25px" }}>* Required</p>
+          <Box
+            sx={{
+              fontWeight: "Bold",
+              fontSize: { lg: "60px", sm: "50px", xs: "25px" },
+            }}
+          >
+            REGISTER FORM
+          </Box>
+          <Box
+            sx={{
+              fontWeight: "400",
+              fontSize: { lg: "25px", sm: "20px", xs: "15px" },
+            }}
+          >
+            * Required
+          </Box>
         </Box>
         <Box
           sx={{
-            padding: " 0 6% 7% 8%",
+            padding: { lg: " 0 6% 7% 8%", sm: " 0 6% 7% 8%", xs: "0 5% 7% 5%" },
             width: "auto",
           }}
         >
@@ -155,12 +169,16 @@ const Register = () => {
               }}
               IconComponent={KeyboardArrowDownRoundedIcon}
               sx={{
-                width: "43%",
+                width: { lg: "43%", sm: "43%", xs: "100%" },
                 borderRadius: "25px",
                 height: "50px",
                 backgroundColor: "#D9D9D9",
                 fontWeight: "bold",
-                margin: "10px 0 0 20px",
+                margin: {
+                  lg: "10px 0 0 20px",
+                  sm: "10px 0 0 20px",
+                  xs: "10px 0 0 0",
+                },
                 ".MuiOutlinedInput-notchedOutline": { border: 0 },
                 "&.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline":
                   {
@@ -193,17 +211,19 @@ const Register = () => {
                   {item.programName}
                 </MenuItem>
               ))}
-              {/* <MenuItem disableRipple>1</MenuItem>
-              <MenuItem disableRipple>1</MenuItem>
-              <MenuItem disableRipple>1</MenuItem>
-              <MenuItem disableRipple>1</MenuItem> */}
             </Select>
-            <Box sx={{ display: "flex", width: "100%" }}>
+            <Box
+              sx={{
+                display: "flex",
+                width: "100%",
+                flexDirection: { lg: "row", sm: "row", xs: "column" },
+              }}
+            >
               <Box
                 sx={{
                   display: "flex",
                   flexDirection: "column",
-                  width: "50%",
+                  width: { lg: "50%", sm: "100%", xs: "100%" },
                 }}
               >
                 <Title number={"2"} title={"Full name"} />
@@ -226,6 +246,7 @@ const Register = () => {
               >
                 <Title number={"3"} title={"Roll number"} />
                 <InputBar
+                  mobile={true}
                   require={false}
                   width={"90%"}
                   {...formik.getFieldProps("RollNumber")}
@@ -240,6 +261,7 @@ const Register = () => {
             </Box>
             <Title number={"4"} title={"Major"} />
             <InputBar
+              mobile={true}
               require={false}
               width={"95%"}
               name={"Major"}
@@ -261,6 +283,7 @@ const Register = () => {
               >
                 <Title number={"5"} title={"Date of birth"} />
                 <InputBar
+                  mobile={true}
                   placeholderText={"DD/MM/YYYY"}
                   require={false}
                   width={"95%"}
@@ -277,6 +300,7 @@ const Register = () => {
               >
                 <Title number={"6"} title={"Phone number"} />
                 <InputBar
+                  mobile={true}
                   require={false}
                   width={"90%"}
                   {...formik.getFieldProps("PhoneNumber")}
@@ -291,6 +315,7 @@ const Register = () => {
             </Box>
             <Title number={"7"} title={"Passport number*"} />
             <InputBar
+              mobile={true}
               require={true}
               width={"95%"}
               {...formik.getFieldProps("PassportNumber")}
@@ -303,6 +328,7 @@ const Register = () => {
             />
             <Title number={"8"} title={"Expiration date"} />
             <InputBar
+              mobile={true}
               require={true}
               width={"95%"}
               {...formik.getFieldProps("ExpirationDate")}
@@ -316,6 +342,7 @@ const Register = () => {
             />
             <Title number={"9"} title={"Personal Facebook link*"} />
             <InputBar
+              mobile={true}
               require={true}
               width={"95%"}
               {...formik.getFieldProps("FacebookLink")}

@@ -5,6 +5,7 @@ import React, { ReactNode } from "react";
 interface props {
   name: string;
   value: any;
+  mobile: boolean;
   width?: string | null;
   helperText?: ReactNode;
   placeholderText?: string | null;
@@ -16,12 +17,14 @@ const InputBar = ({
   width,
   name,
   value,
+  mobile,
   helperText,
   error,
   require,
   placeholderText,
   ...props
 }: props) => {
+  mobile = false;
   return (
     <Box sx={{ margin: " 10px 0 0 20px" }}>
       <TextField
@@ -32,13 +35,13 @@ const InputBar = ({
         style={{ fontWeight: "bold" }}
         error={error}
         placeholder={placeholderText ?? "Enter your answer here"}
-        variant="standard" // <== changed this
+        variant="standard"
         InputProps={{
-          disableUnderline: true, // <== change this
+          disableUnderline: true,
         }}
         sx={{
           backgroundColor: "background.grey",
-          width: width ? width : "100%",
+          width: { lg: "90%", sm: "100%", xs: "100%" },
           height: "50px",
           borderRadius: "25px",
           fontSize: "25px",
