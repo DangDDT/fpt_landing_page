@@ -246,7 +246,6 @@ const Register = () => {
               >
                 <Title number={"3"} title={"Roll number"} />
                 <InputBar
-                  mobile={true}
                   require={false}
                   width={"90%"}
                   {...formik.getFieldProps("RollNumber")}
@@ -261,7 +260,6 @@ const Register = () => {
             </Box>
             <Title number={"4"} title={"Major"} />
             <InputBar
-              mobile={true}
               require={false}
               width={"95%"}
               name={"Major"}
@@ -283,7 +281,6 @@ const Register = () => {
               >
                 <Title number={"5"} title={"Date of birth"} />
                 <InputBar
-                  mobile={true}
                   placeholderText={"DD/MM/YYYY"}
                   require={false}
                   width={"95%"}
@@ -300,7 +297,6 @@ const Register = () => {
               >
                 <Title number={"6"} title={"Phone number"} />
                 <InputBar
-                  mobile={true}
                   require={false}
                   width={"90%"}
                   {...formik.getFieldProps("PhoneNumber")}
@@ -315,7 +311,6 @@ const Register = () => {
             </Box>
             <Title number={"7"} title={"Passport number*"} />
             <InputBar
-              mobile={true}
               require={true}
               width={"95%"}
               {...formik.getFieldProps("PassportNumber")}
@@ -328,7 +323,6 @@ const Register = () => {
             />
             <Title number={"8"} title={"Expiration date"} />
             <InputBar
-              mobile={true}
               require={true}
               width={"95%"}
               {...formik.getFieldProps("ExpirationDate")}
@@ -342,7 +336,6 @@ const Register = () => {
             />
             <Title number={"9"} title={"Personal Facebook link*"} />
             <InputBar
-              mobile={true}
               require={true}
               width={"95%"}
               {...formik.getFieldProps("FacebookLink")}

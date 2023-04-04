@@ -5,7 +5,6 @@ import React, { ReactNode } from "react";
 interface props {
   name: string;
   value: any;
-  mobile: boolean;
   width?: string | null;
   helperText?: ReactNode;
   placeholderText?: string | null;
@@ -17,14 +16,12 @@ const InputBar = ({
   width,
   name,
   value,
-  mobile,
   helperText,
   error,
   require,
   placeholderText,
   ...props
 }: props) => {
-  mobile = false;
   return (
     <Box sx={{ margin: " 10px 0 0 20px" }}>
       <TextField
