@@ -1,1 +1,1 @@
-export { default as FPTLandingPageApp } from './pages/_app';
+export { default as FPTLandingPageApp } from './src/pages/_app';

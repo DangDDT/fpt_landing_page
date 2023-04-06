@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect } from "react";
 import dynamic from "next/dynamic";
-import { NextPageWithLayout } from "@/interfaces/layout";
 import { MainLayout } from "@/components/layout";
 import { Hidden, styled } from "@mui/material";
 import FadeInSection from "@/components/animations/fade-in-section";
+import { NextPageWithLayout } from "@/interfaces/layout";
 
 const DynamicHomeHero = dynamic(() => import("../components/home/hero"));
 const DynamicJoinNow = dynamic(() => import("../components/home/join-now"));
@@ -23,17 +23,9 @@ const Home: NextPageWithLayout = () => {
       <FadeInSection>
         <DynamicJoinNow />
       </FadeInSection>
-      {/* <FadeInSection>
-        <DynamicReferences />
-      </FadeInSection> */}
       <FadeInSection>
         <DynamicReferencesInter />
       </FadeInSection>
-      {/* <DynamicHomePopularCourse />
-      <DynamicHomeFeature />
-      <DynamicHomeTestimonial />
-      <DynamicHomeOurMentors />
-      <DynamicHomeNewsLetter /> */}
     </>
   );
 };

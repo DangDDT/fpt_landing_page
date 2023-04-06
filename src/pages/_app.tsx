@@ -26,7 +26,7 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
 
-const App: FC<AppPropsWithLayout> = (props: AppPropsWithLayout) => {
+const FPTLandingPageApp: FC<AppPropsWithLayout> = (props: AppPropsWithLayout) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
   useEffect(() => {
@@ -52,4 +52,4 @@ const App: FC<AppPropsWithLayout> = (props: AppPropsWithLayout) => {
   );
 };
 
-export default App;
+export default FPTLandingPageApp;
